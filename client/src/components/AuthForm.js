@@ -10,6 +10,7 @@ const AuthForm = () => {
           {isLogin ? 'Login' : 'Sign Up'}
         </h2>
         <form className="space-y-4">
+          {/* Name field for Signup */}
           {!isLogin && (
             <div>
               <input
@@ -21,6 +22,8 @@ const AuthForm = () => {
               />
             </div>
           )}
+
+          {/* Email Field */}
           <div>
             <input
               type="email"
@@ -30,6 +33,8 @@ const AuthForm = () => {
               required
             />
           </div>
+
+          {/* Password Field */}
           <div>
             <input
               type="password"
@@ -40,6 +45,7 @@ const AuthForm = () => {
             />
           </div>
 
+          {/* Submit Button */}
           <div>
             <button
               type="submit"
@@ -50,6 +56,7 @@ const AuthForm = () => {
           </div>
         </form>
 
+        {/* Toggle Between Login and Signup */}
         <div className="text-sm text-center mt-6 text-gray-600">
           {isLogin ? (
             <p>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'; // Import createRoot from react-dom/client
 import './index.css';  // Import Tailwind's CSS
-import LandingPage from './components/LandingPage';
+import LandingPage from './pages/LandingPage';
 
 // Get the root element from the DOM
 const container = document.getElementById('root');
