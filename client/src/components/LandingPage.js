@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './LandingPage.css'; 
-import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com'; // Email functionality
+import AuthForm from './AuthForm';  // Import the AuthForm component
 
 const LandingPage = () => {
   const [formState, setFormState] = useState({
@@ -18,10 +18,10 @@ const LandingPage = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,  // Fetch from .env
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID, // Fetch from .env
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         e.target,
-        process.env.REACT_APP_EMAILJS_USER_ID      // Fetch from .env
+        process.env.REACT_APP_EMAILJS_USER_ID
       )
       .then(
         (result) => {
@@ -33,7 +33,6 @@ const LandingPage = () => {
       );
     e.target.reset();
   };
-  
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -49,7 +48,7 @@ const LandingPage = () => {
           </p>
           <a
             href="#login"
-            className="mt-8 inline-block text-center text-white bg-blue-500 px-6 py-3 rounded-md hover:bg-blue-600" 
+            className="mt-8 inline-block text-center text-white bg-blue-500 px-6 py-3 rounded-md hover:bg-blue-600 transition"
           >
             Get Started
           </a>
@@ -58,7 +57,7 @@ const LandingPage = () => {
         {/* Right side div */}
         <div className="w-1/2 h-full">
           <img
-            src={require('../images/index.png')} 
+            src={require('../images/index.png')}
             alt="Collaborate"
             className="w-full h-full object-cover"
           />
@@ -72,7 +71,7 @@ const LandingPage = () => {
 
       {/* Login or Create Account Section */}
       <div id="login" className="w-full h-screen flex items-center justify-center bg-gray-200">
-        <h2 className="text-4xl font-bold">Login or Create an Account</h2>
+        <AuthForm />
       </div>
 
       {/* Contact Us Section */}
@@ -127,7 +126,7 @@ const LandingPage = () => {
           <div className="flex items-center justify-center">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition"
             >
               Send Message
             </button>
