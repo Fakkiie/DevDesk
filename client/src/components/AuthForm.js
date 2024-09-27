@@ -1,66 +1,55 @@
 import React, { useState } from 'react';
+import Input from './Input';
+import Button from './Button';
 
 const AuthForm = () => {
+  // State to toggle between login and signup mode
   const [isLogin, setIsLogin] = useState(true);
 
   return (
     <div className="flex justify-center items-center w-full h-full">
       <div className="w-full max-w-lg">
+        {/* Title changes based on whether it's login or sign up */}
         <h2 className="text-2xl font-light text-gray-800 text-center mb-8">
           {isLogin ? 'Login' : 'Sign Up'}
         </h2>
         <form className="space-y-4">
-          {/* Name field for Signup */}
+          {/* Name field only appears in sign-up mode */}
           {!isLogin && (
-            <div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                className="w-full px-4 py-3 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"
-                required={!isLogin}
-              />
-            </div>
+            <Input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required={!isLogin}
+            />
           )}
 
-          {/* Email Field */}
-          <div>
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              className="w-full px-4 py-3 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"
-              required
-            />
-          </div>
+          {/* Email field for both login and sign-up */}
+          <Input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
 
-          {/* Password Field */}
-          <div>
-            <input
-              type="password"
-              name="password"
-              placeholder="Your Password"
-              className="w-full px-4 py-3 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"
-              required
-            />
-          </div>
+          {/* Password field for both login and sign-up */}
+          <Input
+            type="password"
+            name="password"
+            placeholder="Your Password"
+            required
+          />
 
-          {/* Submit Button */}
-          <div>
-            <button
-              type="submit"
-              className="w-full px-4 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-600"
-            >
-              {isLogin ? 'Login' : 'Sign Up'}
-            </button>
-          </div>
+          {/* Submit button text changes based on login or sign-up mode */}
+          <Button label={isLogin ? 'Login' : 'Sign Up'} type="submit" />
         </form>
 
-        {/* Toggle Between Login and Signup */}
+        {/* Toggle between login and sign-up */}
         <div className="text-sm text-center mt-6 text-gray-600">
           {isLogin ? (
             <p>
               Don't have an account?{' '}
+              {/* Switch to sign-up mode */}
               <span
                 className="text-gray-800 cursor-pointer hover:underline"
                 onClick={() => setIsLogin(false)}
@@ -71,6 +60,7 @@ const AuthForm = () => {
           ) : (
             <p>
               Already have an account?{' '}
+              {/* Switch to login mode */}
               <span
                 className="text-gray-800 cursor-pointer hover:underline"
                 onClick={() => setIsLogin(true)}
