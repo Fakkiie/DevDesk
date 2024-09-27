@@ -35,98 +35,86 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
       {/* Main Section */}
-      <div className="w-full h-screen flex">
+      <div className="w-full h-screen flex items-center justify-center px-10">
         {/* Left side div */}
-        <div className="w-1/2 flex flex-col justify-center px-10 bg-gray-100">
-          <h1 className="text-5xl font-bold text-gray-800 mb-6">
+        <div className="w-full max-w-xl flex flex-col justify-center space-y-4">
+          <h1 className="text-4xl font-light text-gray-800 mb-6">
             Welcome to Our Platform
           </h1>
-          <p className="text-lg text-gray-600 mb-6">
-            Your space to collaborate, code, and innovate together. Scroll down to create an account or log in to get started.
+          <p className="text-md text-gray-500 mb-6">
+            A place to collaborate, code, and innovate. Scroll down to log in or create an account.
           </p>
           <a
             href="#login"
-            className="mt-8 inline-block text-center text-white bg-blue-500 px-6 py-3 rounded-md hover:bg-blue-600 transition"
+            className="mt-8 inline-block px-6 py-3 text-sm text-white bg-gray-800 rounded-full hover:bg-gray-600 transition"
           >
             Get Started
           </a>
         </div>
 
         {/* Right side div */}
-        <div className="w-1/2 h-full">
+        <div className="hidden lg:block w-1/2 h-full">
           <img
             src={require('../images/index.png')}
             alt="Collaborate"
-            className="w-full h-full object-cover"
+            className="object-cover h-full w-full"
           />
         </div>
       </div>
 
       {/* Explore Features Section */}
-      <div className="w-full h-screen flex items-center justify-center bg-gray-300">
-        <h2 className="text-4xl font-bold">Explore Features</h2>
+      <div className="w-full h-screen flex items-center justify-center bg-gray-50">
+        <h2 className="text-3xl font-light text-gray-800">Explore Features</h2>
       </div>
 
       {/* Login or Create Account Section */}
-      <div id="login" className="w-full h-screen flex items-center justify-center bg-gray-200">
+      <div id="login" className="w-full h-screen flex items-center justify-center bg-gray-50">
         <AuthForm />
       </div>
 
       {/* Contact Us Section */}
-      <div className="w-full h-screen flex flex-col items-center justify-center bg-gray-400">
-        <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
-        <form onSubmit={sendEmail} className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+      <div className="w-full h-screen flex flex-col items-center justify-center bg-gray-50">
+        <h2 className="text-4xl font-light text-gray-800 mb-8">Contact Us</h2>
+        <form onSubmit={sendEmail} className="w-full max-w-lg">
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-              Name
-            </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
-              id="name"
-              name="name"
               type="text"
+              name="name"
               placeholder="Your Name"
               value={formState.name}
               onChange={handleInputChange}
+              className="w-full px-4 py-3 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"
               required
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-              Email
-            </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
-              id="email"
-              name="email"
               type="email"
+              name="email"
               placeholder="Your Email"
               value={formState.email}
               onChange={handleInputChange}
+              className="w-full px-4 py-3 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"
               required
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-              Message
-            </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
-              id="message"
               name="message"
               rows="4"
               placeholder="Your Message"
               value={formState.message}
               onChange={handleInputChange}
+              className="w-full px-4 py-3 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"
               required
             ></textarea>
           </div>
           <div className="flex items-center justify-center">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition"
+              className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-600"
             >
               Send Message
             </button>
