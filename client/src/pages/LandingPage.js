@@ -3,6 +3,7 @@ import MainSection from '../sections/MainSection';
 import AuthForm from '../components/AuthForm';
 import ContactSection from '../sections/ContactSection';
 import FeaturesSection from '../sections/FeaturesSection'; // Add this import
+import Footer from '../components/Footer';
 
 const LandingPage = () => {
   return (
@@ -18,6 +19,7 @@ const LandingPage = () => {
       {/* Contact form section, dont like it just use it as a place holder and lets turn it into a footer with something else liek who we arae maybe 
         to try and get a job lol */}
       <ContactSection />
+      <Footer />
     </div>
   );
 };
