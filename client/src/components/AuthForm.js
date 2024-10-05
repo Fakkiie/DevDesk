@@ -11,7 +11,7 @@ const AuthForm = () => {
       <div className="w-full max-w-lg">
         {/* Title changes based on whether it's login or sign up */}
         <h2 className="text-2xl font-light text-gray-800 text-center mb-8">
-          {isLogin ? 'Login' : 'Sign Up'}
+          {isLogin ? 'LOGIN' : 'SIGN UP'}
         </h2>
         <form className="space-y-4">
           {/* Name field only appears in sign-up mode */}
