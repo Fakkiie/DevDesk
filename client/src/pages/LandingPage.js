@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       {/* Main hero section */}
       <MainSection />
       {/* Features Section */}
